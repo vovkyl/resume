@@ -1,0 +1,94 @@
+<header>
+    <div>
+        <h1><em>{{name}}</em></h1>
+    </div>
+    <div>
+        <em><b>{{birthdate}}</b>   </em>{{birthplace}}
+    </div>
+    <div>
+        <em><b>{{deathdate}}</b>   </em>{{deathplace}}
+    </div>
+    <div>{{nationality}}</div>
+
+    <div>{{occupation}}</div>
+</header>
+        <hr>
+
+        <div>{{known_for}}</div>
+        <br>
+
+        <div>
+            {{#each education}}
+            <div>{{degree}},  {{field}},  {{institution}},  {{year}}</div>
+            {{/each}}
+        </div>
+        <hr>
+    <main>
+        <div>
+            <div><h1>Publications</h1></div>
+
+            {{#each notable_publications}}
+            <div>
+                <ul>
+                    <li>{{title}}</li> 
+                    <li>{{year}}</li>
+                    <li>{{publisher}}</li>
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+        <div>
+            <div><h1>Partners</h1></div>
+
+            {{#each partners}}
+                <div>
+                    <ul>
+                        <li>{{name}}</li>
+                        <li>{{relationship}}</li>
+                        <li>{{years}}</li>
+                    </ul>
+                </div>
+            {{/each}}
+        </div>
+        <div>
+            <div><h2>Awards</h2></div>
+
+            {{#each awards}}
+                <div>
+                    <ul>
+                        <li> {{title}}</li> 
+                        <li> {{year}}</li> 
+                        <li>{{description}}</li> 
+                    </ul>
+                </div>
+            {{/each}}
+        </div>
+        <section>
+            <div><h2>influences</h2></div>
+            <div>{{influences}}</div>
+        </section>
+        <section>
+            <div><h2>Influenced</h2></div>
+            <div>{{influenced}}</div>
+        </section>
+        <div>
+            <div><h2>Quotes</h2></div>
+            <div><q><strong>{{quotes}}</strong></q></div>
+        </div>
+        <br>
+        <div>
+            {{#each major_discoveries}}
+            <div><em><b>{{title}}</b></em> {{year}} <q>{{description}}</q></div>
+            {{/each}}
+
+        </div>
+        <br>
+        <div>
+            {{#with contributions}}
+            <div><em><strong>{{title}}</strong></em> <q>{{description}}</q>  {{year}} {{field}}</div>
+            {{/with}}
+
+        </div>
+    </main>
+
+
