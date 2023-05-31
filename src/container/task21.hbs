@@ -1,0 +1,72 @@
+<main>
+    <div>
+        <ul>
+            {{#with heading}}
+                {{#with main}}
+                    <div class="display-6">{{title}}</div>
+                    <div>{{text}}</div>
+                    <br>
+                    {{#with button_text}}
+                        <button class="btn btn-primary">{{solid}}</button>
+                        <button class="btn btn-outline-primary ">{{outline}}</button>
+                    {{/with}}
+                {{/with}}
+                <br>
+                <br>
+                {{#with second}}
+                    <div class="display-6">{{title}}</div>
+                    <div>{{text}}</div>
+                    <br>
+                    {{#with button_text}}
+                        <button class="btn btn-primary">{{solid}}</button>
+                        <button class="btn btn-outline-primary ">{{outline}}</button>
+                    {{/with}}
+                {{/with}}
+                <br>
+                <br>
+                {{#with subblock}}
+                    <div class="display-6">{{title}}</div>
+                    <div>{{text}}</div>
+                    <br>
+                    {{#with button_text}}
+                        <button class="btn btn-primary">{{solid}}</button>
+                        <button class="btn btn-outline-primary ">{{outline}}</button>
+                    {{/with}}
+                {{/with}}
+            {{/with}}
+            <br>
+            <br>
+            {{#with nested_display}}
+            
+                <div class="display-6">{{title}}</div>
+                {{#with children_display}}
+                    <div><em>{{title}}</em></div>
+                    <div>{{text}}</div>
+                    {{#with button}}
+                        <button class="btn btn-success">{{text}}</button>
+                    {{/with}}
+                {{/with}}
+                <br>
+                <br>
+        
+                <div class="display-6">{{header_text}}</div>
+                    {{#with button}}
+                        <button class="btn btn-outline-info">{{text}}</button>
+                    {{/with}}
+            {{/with}}
+            <br>
+            <br>
+            {{#with paragraph}}
+                <div class="display-6">{{title}}</div>
+                <p>{{text}}</p>
+                {{#with button}}
+                <button class="btn btn-light">{{text}}</button>
+                <a href="{{url}}" class="btn btn-secondary" >url</a>
+                {{/with}}
+                {{#each list_name}}
+                <li><a href="{{url}}">{{text}} / {{url}}</a></li>
+                {{/each}}
+            {{/with}} 
+        </ul>
+    </div>
+</main>
