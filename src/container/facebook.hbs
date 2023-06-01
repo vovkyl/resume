@@ -1,37 +1,27 @@
+<h1>{{name}}</h1>
 
- <div>
-    <h1>{{name}}</h1>
+<div>
+    <ul>
+               
+            {{#each users}}
+             <h2>User</h2> 
+               
+               <li> {{id}} / {{name}} / {{gender}} / {{age}} </li>
+               
+               <hr>
+               <h3>Friends</h3>
+               <ul>
+               {{#each friends}}
+                <li> {{id}} / {{name}} / {{gender}} / {{age}} </li>
+                </ul>
+                <ul>
+                <h3>Mutual friends</h3>
+                {{#each mutual_friends}}
+                    <li> {{id}} / {{name}} / {{gender}} / {{age}} </li>
+                    </ul>
+                {{/each}}
+                
+               {{/each}}
+            {{/each}}
+    </ul>
 </div>
-<ul>
-    {{#each users}} 
-        <li> {{id}} /{{name}} /{{gender}} /{{age}}</li>
-        {{#each friends}}
-            <li> {{id}} /{{name}} /{{gender}} /{{age}}</li>
-            {{#each groups}}
-                    <li> {{id}} /{{name}} /{{description}}</li>
-                    {{#each members}}
-                    <li> {{id}} /{{name}} /{{gender}} /{{age}}</li>
-                    {{/each}}   
-                {{/each}} 
-            {{#each mutual_friends}}
-                    <li> {{id}} /{{name}} /{{gender}} /{{age}}</li>
-                    {{#each mutual_friends}}
-                        <li> {{id}} /{{name}} /{{gender}} /{{age}}</li>
-                    {{/each}}
-                
-            {{/each}}
-        {{/each}}
-        {{#each groups}}
-            <li> {{id}} /{{name}} /{{description}}</li>
-                {{#each members}}
-                <li> {{id}} /{{name}} /{{gender}} /{{age}}</li>   
-            {{/each}}
-        {{/each}}        
-    {{/each}}            
-</ul>
-
-
-           
-                
-        
-   

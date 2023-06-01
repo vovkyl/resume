@@ -1,0 +1,52 @@
+<main>
+    <div>
+        
+            {{#with page_header}}
+            <h1 class="text-center">{{title}}</h1>
+            <div class="text-center">{{description}}</div>
+            {{/with}} 
+             {{#with section}}
+                {{#with about_us}}
+                    {{#with title_list}}
+                    <div><em>{{main}}</em></div>
+                    <div>{{sub}}</div>
+                    {{/with}}
+                    <button class="btn btn-primary">Show more</button>
+                {{/with}}
+                {{#with advantage}}
+                    <h2 class="text-center">{{title}}</h2>
+                    {{#with efficiency}}
+                        <div><em>{{title}}</em></div>
+                        <div>{{sub_title}}</div>
+                        <div>{{description}}</div>
+                    {{/with}}
+                    <button class="btn btn-primary">Show more</button>
+                     {{#with innovation}}
+                        <h3 class="text-center">{{title}}</h3>
+                        <div>{{sub_title}}</div>
+                        <div>{{description}}</div>
+                    {{/with}}
+                    <button class="btn btn-primary">Show more</button>
+                     {{#with collaboration}}
+                        <h3 class="text-center">{{title}}</h3>
+                        <div>{{sub_title}}</div>
+                        <div>{{description}}</div>
+                    {{/with}}
+                    <button class="btn btn-primary">Show more</button>
+                {{/with}}
+                {{#with agreement}}
+                <h2 class="text-center">{{title}}</h2>
+                    {{#with info}}
+                        <div>{{sub_title}}</div>
+                        {{#with detail}}
+                            <div>{{text}}</div>
+                            <button class="btn btn-info">Аccept</button>
+                        {{/with}}
+                    {{/with}}
+                {{/with}}
+
+
+             {{/with}}          
+        
+    </div>
+</main>
