@@ -1,0 +1,92 @@
+<main>
+    <div class="row">
+        <div class="col-8">
+               <div class="card">
+                <div class="card-body">
+                    {{#with navigation}}
+                            {{#each links}}
+                                <button href="{{href}}" class="btn btn-link">{{text}}</button>
+                            {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+            <h1>{{ header}}</h1>
+            {{#with contacts_data}}
+            <h5>{{title}}</h5>
+                {{#each buttons}}
+                    {{#if isOutline}}<button class="btn btn-outline-warning">{{text}}</button>{{/if}}
+                    {{#if isPrimary}}<button class="btn btn-warning">{{text}}</button>{{/if}}
+                {{/each}}
+                {{#with form}}
+                    {{#with input}}
+                        <div class="row row-cols-2">
+                            <div class="col-4">
+                                {{#with surname}}
+                                    <label class="form-label">{{label}}</label>
+                                    <input type="text" placeholder="Іванов"class="form-control">
+                                    <div class="form-text">{{caption}}</div>
+                            
+                                {{/with}}
+                            </div> 
+                            <div class="col-4">
+                                {{#with name}}
+                                    <label class="form-label">{{label}}</label>
+                                    <input type="text" placeholder="Іван"class="form-control">
+                                    <div class="form-text">{{caption}}</div>           
+                                {{/with}}
+                            </div>    
+                        </div>
+                        <div class="row row-cols-2">
+                            <div class="col-4">
+                                {{#with phone}}
+                                    <label class="form-label">{{label}}</label>
+                                    <input type="text" placeholder="+38 (XXX) XXX XX XX"class="form-control">
+                                    <div class="form-text">{{caption}}</div>
+                                {{/with}}
+                            </div> 
+                            <div class="col-4">
+                                {{#with email}}
+                                    <label class="form-label">{{label}}</label>
+                                    <input type="text" placeholder="ivanivanov@ukr.net"class="form-control">
+                                    <div class="form-text">{{caption}}</div>           
+                                {{/with}}
+                            </div>    
+                        </div>        
+                    {{/with}} 
+                    <hr>
+                    {{#each switch}}
+                        <div class="col">
+                            <div class="form-check form-switch">
+                                <label class="form-check-label">{{text}}</label>
+                                <input type="checkbox" class="form-check-input"id="flexSwitchCheckChecked" checked>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+                    
+                {{/with}}
+            {{/with}}
+            
+
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card">
+                        <div class="card-body">
+                            {{#each action_block}}
+                                {{#if isSuccess}}<button class="btn btn-success">{{text}}</button>{{/if}}
+                                {{#if isDanger}}<button class="btn btn-danger">{{text}}</button>{{/if}}
+                                {{#if isInfo}}<button class="btn btn-info">{{text}}</button>{{/if}}
+                            {{/each}}
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        
+                    </div>
+                </div>
+                   
+        </div>
+    </div>
+</main>
