@@ -16,10 +16,11 @@
             
             {{#with newsBlock}}
                 <h5 class="text-center">{{title}}</h5>
-                <div class="row row-cols-4">
+                <div class="row">
     <br>                
                             {{#each cards}}
-                                <div class="card">
+                            <div class="col-3">
+                                <div class="card mb-2 m-2">
                                     <div class="card-header">{{title}}
                                         {{#if isTop isTop=true}}
                                             <button class="rounded-pill btn btn-sm btn-primary">{{isTop}}</button>
@@ -31,7 +32,8 @@
                                         {{/if}}
                                     </div>
                                     <div class="card-body">{{description}}</div>
-                                </div>       
+                                </div> 
+                            </div>      
                             {{/each}}
                 </div>                      
                     {{/with}} 
@@ -41,20 +43,21 @@
                 <hr>
                 <div>
                     {{#with goodsBlock}}
+                    <ul class="nav nav-tabs">
                         {{#each tabs}}       
-                            <div class="nav nav-tabs">
-                                <div class="nav-item">  
-                                    {{#if isActive isActive=true}}
-                                        <a class="nav-link active">{{text}}</a>
-                                        {{else}}
+                            
+                                <li class="nav-item"> 
                                         <a class="nav-link">{{text}}</a>
-                                    {{/if}}
-                                </div>
-                            </div>
-                        {{/each}}  
-                    <div class="row row-cols-3">         
+                                     </li>
+                                       
+                                        {{#if isActive}}<a class="nav-link active">{{text}}</a>{{/if}}
+                                        {{#if isDisabled}}<a class="nav-link disabled">{{text}}</a>{{/if}}
+                                 {{/each}} 
+                            </ul>
+                        
+                    <div class="row">         
                         {{#each cards}}
-                            <div class="card">
+                            <div class="card col-3 mt-3 me-5">
                                 <img src="https://picsum.photos/400/200" class="card-img-top" alt="Product Photo">
                                 <div class="card-body">
                                     <h5 class="card-title">{{title}}</h5>
@@ -73,7 +76,7 @@
                     </div> 
                     {{/with}}
                 </div>
-                <div class="card">
+                <div class="card mt-5 mb-5">
                     <div class="card-body text-bg-dark">
                     {{#with subscribe}}
                     <h2>{{header}}</h2>
@@ -89,7 +92,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card">
+                <div class="card mt-5 mb-5">
                     <div class="card-body text-bg-success">                                
                         <div class="text-center">
                             {{#with service}}
@@ -105,13 +108,16 @@
                 <hr>
                 <footer>
                     
-                        {{#each footer}}    
-                         
-                         <div>{{text}}</div>
+                        {{#each footer}}  
+                        <   
+                         <li>{{text}}</li>
+                        
+                         <p><a href="{{link}}" class="link-primary">{{link}}</a></p>
                        
                         
                         
                         {{/each}} 
+                    
                  </footer>         
         </div>
     </div>
