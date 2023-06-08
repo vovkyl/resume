@@ -7,13 +7,18 @@
                     <div class="card">
                         <div class="card-body">
                             {{#with main}}
-                            <div class="display-6">{{title}}</div>
-                            <div>{{text}}</div>
-                            <br>
+                            <h1>{{title}}</h1>
+                            <p>{{text}}</p>
+                           
                             {{#with button_text}}
-                                <button class="btn btn-primary">{{solid}}</button>
-                                <button class="btn btn-outline-primary ">{{outline}}</button>
+                            <div>
+                                <button class="btn btn-primary mb-2">{{solid}}</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-primary col-4">{{outline}}</button>
+                            </div>
                             {{/with}}
+                            
                         {{/with}}
                         </div>
                     </div>
@@ -21,12 +26,15 @@
                     <div class="card">
                         <div class="card-body">    
                             {{#with second}}
-                                <div class="display-6">{{title}}</div>
-                                <div>{{text}}</div>
-                                <br>
+                                <h2>{{title}}</h2>
+                                <p>{{text}}</p>
                                 {{#with button_text}}
-                                    <button class="btn btn-primary">{{solid}}</button>
-                                    <button class="btn btn-outline-primary ">{{outline}}</button>
+                                <div>
+                                    <button class="btn btn-secondary mb-2">{{solid}}</button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-secondary">{{outline}}</button>
+                                </div> 
                                 {{/with}}
                             {{/with}}
                         </div>
@@ -35,12 +43,15 @@
                     <div class="card">
                         <div class="card-body">
                             {{#with subblock}}
-                                <div class="display-6">{{title}}</div>
-                                <div>{{text}}</div>
-                                <br>
+                                <h3>{{title}}</h3>
+                                <p>{{text}}</p>
                                 {{#with button_text}}
-                                    <button class="btn btn-primary">{{solid}}</button>
-                                    <button class="btn btn-outline-primary ">{{outline}}</button>
+                                <div>
+                                    <button class="btn btn-dark mb-2 col-2">{{solid}}</button>
+                                </div>
+                                <div>
+                                     <button class="btn btn-outline-dark col-2 ">{{outline}}</button>
+                                </div>   
                                 {{/with}}
                             {{/with}}
                         </div>
@@ -89,15 +100,15 @@
                             <p class="display-6">{{title}}</p>
                                 <p>{{text}}</p>
                             {{#with button}}
-                                <button class="btn btn-light">{{text}}</button>
-                                <a href="{{url}}" class="btn btn-secondary" >url</a>
+                                
+                                <a href="{{url}}" class="btn btn-link" >Link</a>
                             {{/with}}
                             <br>
                             <br>
                             <div class="card">
                                 <div class="card-body">
                                     {{#each list_name}}
-                                        <li><a href="{{url}}">{{text}} / {{url}}</a></li>
+                                        <li><a href="{{url}}" class="btn btn-link" >Link</a></li>
                                     {{/each}}
                                 </div>
                             </div>    
