@@ -58,7 +58,8 @@
                         <div class="col">
                             <div class="form-check form-switch">
                                 <label class="form-check-label">{{text}}</label>
-                                <input type="checkbox" class="form-check-input"id="flexSwitchCheckChecked" checked>
+                                <input type="checkbox" class="form-check-input">
+                                {{#if isActive}}<input type="checkbox" class="form-check-input"id="flexSwitchCheckChecked" checked>{{/if}}
                             </div>
                         </div>
                     {{/each}}
@@ -69,16 +70,87 @@
             
 
                 <div class="row">
-                    <div class="col-4">
-                        <div class="card">
-                        <div class="card-body">
+                    
+                        <div class="card col-4">
+                            {{!-- <div class="col-6 "> --}}
+                        <div class="card-body ">
+                            
                             {{#each action_block}}
-                                {{#if isSuccess}}<button class="btn btn-success">{{text}}</button>{{/if}}
-                                {{#if isDanger}}<button class="btn btn-danger">{{text}}</button>{{/if}}
-                                {{#if isInfo}}<button class="btn btn-info">{{text}}</button>{{/if}}
+                            <ul>
+                                {{#if isSuccess}}<button class="btn btn-success mb-1">{{text}}</button>{{/if}}
+                                {{#if isDanger}}<button class="btn btn-danger mb-1">{{text}}</button>{{/if}}
+                                {{#if isInfo}}<button class="btn btn-info mb-1">{{text}}</button>{{/if}}
+                                </ul>
                             {{/each}}
+                            
                         </div>
                         </div>
+                    <div class="row">
+                        <div class="card col-4">
+                            <div class="card-body">
+                                {{#with total}}
+                                    <div class="card-title">{{title}}</div>
+                                    {{#each item_list}}
+                                    <div>{{name}} : {{price}}</div>
+                                    {{/each}}
+                                    <hr>
+                                    {{#each additional_info}}
+                                    <div>{{text}} : {{value}}</div>
+                                    {{/each}}
+                                    <hr>
+                                    {{#with total_price}}
+                                    <div>{{text}} : {{value}}</div>
+                                    {{/with}}
+                                    <hr>
+                                    {{#each button}}
+                                    {{#if isPrimary}}<button class="btn btn-primary">{{text}}</button>{{/if}}
+                                    {{#if isOutline}}<button class="btn btn-outline-primary mt-2">{{text}}</button>{{/if}}
+                                    {{/each}}
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                     </div>
+                    <hr>
+                     <div class="row ">
+                            <div class="col-8">
+                    {{#with delivery}}
+                    <h5>{{title}}</h5>
+                    <div class="card ">
+                                                    
+                        
+                        {{!-- <div class="  col-8"> --}}
+                            {{#each select}}
+                            <div c>
+                            <div class="col-6">
+                             <div class="form-label">{{label}}</div>
+
+                                <select class="form-select" aria-label="Default select example">
+                                <option selected>{{placeholder}}</option>
+                                {{#each options}}
+                                <option value >{{text}}</option>
+                                
+                            
+                            {{/each}}
+                                </select>
+                            
+                            </div>
+                            </div>
+                            {{/each}}
+                            
+                            {{/with}}
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+
+
+
+
+                       
                     </div>
                 </div>
                 <div>

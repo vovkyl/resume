@@ -46,12 +46,17 @@
                     <ul class="nav nav-tabs">
                         {{#each tabs}}       
                             
-                                <li class="nav-item"> 
-                                        <a class="nav-link">{{text}}</a>
-                                     </li>
-                                       
-                                        {{#if isActive}}<a class="nav-link active">{{text}}</a>{{/if}}
+                                <div class="nav-item"> 
+                                        <a class="nav-link"></a>
+                                </div>
+                                      
+                                        {{#if isActive}}
+                                        <a class="nav-link active">{{text}}</a>
+                                        {{else}}
+                                        <a class="nav-link ">{{text}}</a>
+                                        {{/if}}
                                         {{#if isDisabled}}<a class="nav-link disabled">{{text}}</a>{{/if}}
+                           
                                  {{/each}} 
                             </ul>
                         
@@ -107,17 +112,24 @@
                 </div>
                 <hr>
                 <footer>
-                    
+                    <div class="row row-cols-6">
+                        
                         {{#each footer}}  
-                        <   
-                         <li>{{text}}</li>
+                        <ul>
+                            {{#each this}}
+                        <div class="col-2">
+                         <div>
+                         <p><a href="{{link}}" class="btn btn-link" >{{text}}</a></p>
+                        </div>
+                         {{#if this}}<a href="{{link}}" class="btn btn-link disabled"></a>{{/if}}
+                          
+                         </div>
+                       {{/each}}
                         
-                         <p><a href="{{link}}" class="link-primary">{{link}}</a></p>
-                       
+                        </ul>
+                        {{/each}}
                         
-                        
-                        {{/each}} 
-                    
+                    </div>
                  </footer>         
         </div>
     </div>
