@@ -112,25 +112,24 @@
                 </div>
                 <hr>
                 <footer>
-                    <div class="row row-cols-6">
-                        
-                        {{#each footer}}  
-                        <ul>
-                            {{#each this}}
-                        <div class="col-2">
-                         <div>
-                         <p><a href="{{link}}" class="btn btn-link" >{{text}}</a></p>
-                        </div>
-                         {{#if this}}<a href="{{link}}" class="btn btn-link disabled"></a>{{/if}}
-                          
-                         </div>
-                       {{/each}}
-                        
-                        </ul>
-                        {{/each}}
-                        
+                    <div class="row">
+            {{#each footer}}
+                {{#with this}}
+                    <div class=" nav col-2 pm-1">
+                        <table class="col-1">
+                            <tbody><tr>
+                                <td><a href={{[0].link}} class="nav-link">{{[0].text}}</a></td></tr>
+                                <td><a href={{[1].link}} class="nav-link">{{[1].text}}</a></td></tr>
+                                <td><a href={{[2].link}} class="nav-link">{{[2].text}}</a></td></tr>
+                                <td><a href={{[3].link}} class="nav-link disabled">{{[3].text}}</a></td></tr>
+                            </tbody>
+                        </table>
                     </div>
-                 </footer>         
+                {{/with}}
+            {{/each}}
+        </div>
+    
+                </footer>         
         </div>
     </div>
                
