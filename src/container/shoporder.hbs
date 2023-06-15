@@ -1,7 +1,7 @@
 <main>
     <div class="row">
-        <div class="col-8">
-               <div class="card">
+        <div class="col">
+            <div class="card">
                 <div class="card-body">
                     {{#with navigation}}
                             {{#each links}}
@@ -14,9 +14,13 @@
                     {{/with}}
                 </div>
             </div>
+        </div>
+    </div>  
+    <div class="row">  
+        <div class="col-8">
             <h1>{{ header}}</h1>
             {{#with contacts_data}}
-            <h5>{{title}}</h5>
+                <h5>{{title}}</h5>
                 {{#each buttons}}
                     {{#if isOutline}}<button class="btn btn-outline-warning">{{text}}</button>{{/if}}
                     {{#if isPrimary}}<button class="btn btn-warning">{{text}}</button>{{/if}}
@@ -48,7 +52,7 @@
                                     <div class="form-text">{{caption}}</div>
                                 {{/with}}
                             </div> 
-                            <div class="col-4">
+                            <div class="col-4 mt-4">
                                 {{#with email}}
                                     <label class="form-label">{{label}}</label>
                                     <input type="text" placeholder="ivanivanov@ukr.net"class="form-control">
@@ -56,7 +60,7 @@
                                 {{/with}}
                             </div>    
                         </div>        
-                    {{/with}} 
+                    {{/with}}
                     <hr>
                     {{#each switch}}
                         <div class="col">
@@ -67,13 +71,9 @@
                             </div>
                         </div>
                     {{/each}}
-        </div>
-                    
+        </div>  
                 {{/with}}
             {{/with}}
-            
-
-                <div class="row">
                     <div class="card col-4">
                         <div class="card-body ">
                             {{#each action_block}}
@@ -81,11 +81,7 @@
                                 {{#if isDanger}}<button class="btn btn-danger col-6 mt-2">{{text}}</button>{{/if}}
                                 {{#if isInfo}}<button class="btn btn-info col-8 mt-2">{{text}}</button>{{/if}}                            
                             {{/each}} 
-                        </div>                            
-                    </div>
-                </div>
-                    <div class="row">
-                        <div class="card col-4">
+                        </div>                           
                             <div class="card-body">
                                 {{#with total}}
                                     <div class="card-title">{{title}}</div>
@@ -107,7 +103,6 @@
                                     {{/each}}
                                 {{/with}}
                             </div>
-                        </div>
                     </div>
     </div>
                     <hr>
@@ -291,3 +286,9 @@
         </div>
     </div>
 </main>
+
+  {{#with navigation}}
+    {{#each links}}
+      <a href='{{href}}' class='nav-link'>{{text}}</a>
+    {{/each}}
+  {{/with}}
