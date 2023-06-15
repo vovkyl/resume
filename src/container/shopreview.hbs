@@ -1,16 +1,22 @@
 <main>
-  {{#with navigation}}
-    {{#each links}}
-      {{#if href}}
-      <a href="{{href}}" class="btnt btn-primary mx-2">{{text}}</a>
-      {{else}}
-      <a href="{{href}}" class="btnt btn-primary mx-2 disabled">{{text}}</a>
-      {{/if}}
-    {{/each}}
-  {{/with}}
-  <div class='row'>
-    <div class='col'>
-      <div class='row'>
+  <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    {{#with navigation}}
+                            {{#each links}}
+                                {{#if href href=null}}
+                                <a href="{{href}}" class="btn btn-link">{{text}}</a>
+                                {{else}}
+                                <a href="{{href}}" class="btn btn-link disabled">{{text}}</a>
+                                {{/if}}
+                            {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>  
+    <div class='row'>
         <div class='col-8'>
           {{#with formBlock}}
             <div class='display-5'>{{header}}</div>
@@ -19,62 +25,16 @@
             {{/with}}
             {{#with actionBlock}}
               {{#each tabs}}
-                {{! <div class='row'>
-                  <div class='col'> }}
-                {{!-- <ul class='nav nav-tabs'>
-                  <li class='nav-item'>
-                    <a
-                      href='#'
-                      class='nav-link' aria-current="page"
-                    >{{text}}</a> --}}
-                {{!-- {{#if isActive}}
-                      <a
-                        href='#'
-                        class='nav-link active'
-                      >{{text}}</a>
-                    {{/if}} --}}
-                {{!-- <ul class='nav nav-tabs'>
-                  <li class='nav-item-link'>
-                    <a
-                      class='nav-link active'
-                      aria-current='page'
-                      href='#'
-                    >{{text}}</a>
-                  </li>
-                </ul> --}}
-                {{! </div>
-                </div> }}
-                
-              {{!-- <ul > --}}
-                <nav>
-                <div class="nav nav-tabs">
-                {{!-- <li class="nav-item"> --}}
-                  
-                  <a class="nav-link" aria-current="page" href="#">{{text}}</a>
-                  
-                {{!-- </li> --}}
-                </div>
-                </nav>
-                
-              
-  {{!-- <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled">Disabled</a>
-  </li> --}}
-  {{!-- </ul> --}}
-
-
-
-
-
-
-
-
+                {{!-- <nav class="nav nav-tabs"> --}}
+                   <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">{{text}}</a>
+                    {{#if isActive}}
+                    <a class="nav-link active" aria-current="page" href="#">{{text}}</a>
+                    {{/if}}
+                    </li>
+                   </ul>
+                {{!-- </nav> --}}
               {{/each}}
               <hr class='mt-5' />
               <div class='card mt-5'>
@@ -95,38 +55,23 @@
             
             {{#with feedbackBlock}}
               <div class='display-6'>{{title}}
-              {{#each buttons}}
-                    {{#if isWarning}}<a
-                        href='{{link}}'
-                        class='btn btn-warning btn-sm'
-                      >{{text}}</a>{{/if}}
-                    {{#if isSuccess}}<a
-                        href='{{link}}'
-                        class='btn btn-success btn-sm'
-                      >{{text}}</a>{{/if}}
-                    {{#if isDanger}}<a
-                        href='{{link}}'
-                        class='btn btn-danger btn-sm'
-                      >{{text}}</a>{{/if}}
-              {{/each}}
+                {{#each buttons}}
+                        {{#if isWarning}}<a href='{{link}}'class='btn btn-warning btn-sm'>{{text}}</a>{{/if}}
+                        {{#if isSuccess}}<a href='{{link}}'class='btn btn-success btn-sm'>{{text}}</a>{{/if}}
+                        {{#if isDanger}}<a href='{{link}}'class='btn btn-danger btn-sm'>{{text}}</a>{{/if}}
+                {{/each}}
+              </div>
             {{/with}}
-          
-
+        </div>
+    
             {{#with goodsInfo}}
               <div class='col-4'>
                 <div class='card mt-3 '>
                   <div class='card-body'>
-                    <img
-                      src='{{photo}}'
-                      class='card-img-top'
-                      alt='text'
-                    />
-                  
+                    <img src='{{photo}}'class='card-img-top' alt='text'/>
                     <h5 class='card-title'>{{name}}</h5>
                   </div>
                 </div>
-              </div>
-              <div class="col-4">
                 <div class="card mt-3">
                   <div class="card-body">
                     <h5 class='card-title'>{{price}}</h5>
@@ -144,11 +89,12 @@
                       {{/with}}
                     </div>
                 </div>                
-              </div>
             {{/with}}
           {{/with}}
         </div>
+        </div>
       </div>
+    </div>
        <hr class="mt-5">
           <div class="row">
             <div class="card mt-5">
