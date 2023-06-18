@@ -24,18 +24,13 @@
               <div class='mt-5'>{{title}} {{value}}</div>
             {{/with}}
             {{#with actionBlock}}
+            <ul class="nav nav-tabs">
               {{#each tabs}}
-                {{!-- <nav class="nav nav-tabs"> --}}
-                   <ul class="nav nav-tabs">
                     <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">{{text}}</a>
-                    {{#if isActive}}
-                    <a class="nav-link active" aria-current="page" href="#">{{text}}</a>
-                    {{/if}}
+                    <a class="nav-link {{#if isActive}} active{{/if}}" aria-current="page" href="#">{{text}}</a>
                     </li>
-                   </ul>
-                {{!-- </nav> --}}
               {{/each}}
+              </ul>
               <hr class='mt-5' />
               <div class='card mt-5'>
                 <div class='card-body'>
