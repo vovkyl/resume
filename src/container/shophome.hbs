@@ -2,14 +2,16 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body"> 
+                
                     {{#with navigation}}
+                    <div class="card-body"> 
                         {{#each links}}
                         <button href="{{href}}" class="btn btn-link">{{text}}</button>
                         {{/each}}
                     {{/with}}
                         <a href="#" class="btn btn-link disabled">Link</a>
-                        
+                </div>        
+            </div>
         </div>
     </div>
     <br>
